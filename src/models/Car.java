@@ -11,23 +11,30 @@ public class Car {
     private Date registrationDate;
     private Integer acceleration = 0;
 
+    //default constructor
     public Car() {}
-    //When you add a constructor, the default constructor disappears
+
+    // When you add a constructor, the default constructor disappears
+    // constructor with one parameter
     public Car(String registration) {
         this.registration = registration;
     }
+
+    // constructor with two parameters
     public Car(String registration, String colour) {
         this.registration = registration;
         this.colour = colour;
     }
+
+    // constructor with three parameters
     public Car(String registration, String colour, String make) {
         this.registration = registration;
         this.colour = colour;
         this.make = make;
     }
 
-    //Access methods to our members
-    //getMemberName, setMemberName
+    // Access methods to our members
+    // getMemberName, setMemberName
     public String getColour() {
         return this.colour;
     }
@@ -35,13 +42,14 @@ public class Car {
         this.colour = colour;
     }
 
-    //make -getter and setter
+    // make -getter and setter
     public String getMake() {
         return this.make;
     }
     public void setMake(String make) {
         switch (make.toLowerCase()){
-            //if (make.equals("honda") || make.equals("toyata") || make.equals("mazda"))
+            // if (make.equals("honda") || make.equals("toyata") || make.equals("mazda"))
+            // only allow certain makes of car
             case "honda":
             case "toyata":             
             case "mazda":
@@ -49,6 +57,7 @@ public class Car {
                 break;
 
             default:
+                // do nothing if the make is not allowed
         }
     }
 
@@ -69,7 +78,7 @@ public class Car {
         return this.acceleration;
     }
 
-    //Behaviour -method
+    // Behaviour -method
     public void horn() {
             System.out.println("horn horn horn");
     }
